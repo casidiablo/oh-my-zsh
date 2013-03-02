@@ -12,11 +12,15 @@ export PATH=$PATH:/opt/local/bin:~/bin
 alias grep='grep --color'
 export M2_HOME="/usr/share/maven/"
 export ANDROID_HOME=/Users/cristian/dev/android-sdk/
-export PATH=$PATH:~/bin/
 export NDK=~/dev/android-ndk-r8d
 export NDK_BASE=$NDK
-export PATH=/opt/local/bin:/opt/local/sbin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:$PATH
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin/:$HOME/idea/vogar/bin/
 export ANDROID_NDK_HOME=$NDK
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Some aliases...
+alias o=open
