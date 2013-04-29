@@ -24,8 +24,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Some aliases...
 alias o=open
-alias mci='mvn clean install'
-alias mi='mvn install'
-alias mdci='mvn -DskipTests=true clean install'
+alias mci='mvn clean source:jar install'
+alias mi='mvn source:jar install'
+alias mdci='mvn -DskipTests=true clean source:jar install'
 alias mc='mvn clean'
 alias mtdply='mvn clean -DaltDeploymentRepository=telly-sonatype-nexus-snapshot::default::https://oss.sonatype.org/content/repositories/snapshots/ deploy'
