@@ -24,3 +24,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Some aliases...
 alias o=open
+alias mci='mvn clean install'
