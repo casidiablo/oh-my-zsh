@@ -3,7 +3,7 @@ ZSH_THEME="agnoster"
 
 CASE_SENSITIVE="true"
 
-plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein)
+plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein hg)
 
 source $ZSH/oh-my-zsh.sh
 
