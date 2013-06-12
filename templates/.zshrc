@@ -17,10 +17,7 @@ export NDK_BASE=$NDK
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$HOME/idea/vogar/bin
 export ANDROID_NDK_HOME=$NDK
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$HOME/dev/gradle-1.6/bin:$HOME/.rvm/bin:/usr/local/heroku/bin:$PATH"
 
 ### Some aliases...
 alias o=open
