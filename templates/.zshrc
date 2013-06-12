@@ -7,14 +7,14 @@ plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:/opt/local/bin:~/bin
+export PATH=/usr/local/bin:/opt/local/bin:$PATH:~/bin
 
 alias grep='grep --color'
 export M2_HOME="/usr/share/maven/"
-export ANDROID_HOME=/Users/cristian/dev/android-sdk/
+export ANDROID_HOME=$HOME/dev/android-sdk/
 export NDK=~/dev/android-ndk-r8d
 export NDK_BASE=$NDK
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin/:$HOME/idea/vogar/bin/
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$HOME/idea/vogar/bin
 export ANDROID_NDK_HOME=$NDK
 
 ### Added by the Heroku Toolbelt
