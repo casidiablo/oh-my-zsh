@@ -26,3 +26,6 @@ alias mi='mvn source:jar install'
 alias mdci='mvn -DskipTests=true clean source:jar install'
 alias mc='mvn clean'
 alias mtdply='mvn clean -DaltDeploymentRepository=telly-sonatype-nexus-snapshot::default::https://oss.sonatype.org/content/repositories/snapshots/ deploy'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
