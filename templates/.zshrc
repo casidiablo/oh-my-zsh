@@ -18,14 +18,14 @@ export ANDROID_NDK_HOME=$NDK
 export RVM_HOME=$HOME/.rvm/bin
 export HEROKU_BIN=/usr/local/heroku/bin
 
-# Path re-definition...
+# ... add preceding paths to $PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# ... add opt paths
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # ... add android paths
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$GRADLE_HOME/bin
 # ... add heroku and rvm paths
 export PATH=$PATH:$HEROKU_BIN:$RVM_HOME
-# ... add preceding paths to $PATH
-export PATH=/usr/local/bin:~/bin:$PATH
 
 ### Some aliases...
 alias o=open
