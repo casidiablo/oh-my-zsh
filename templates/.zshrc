@@ -7,7 +7,7 @@ plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein
 
 source $ZSH/oh-my-zsh.sh
 
-export GRADLE_HOME=$HOME/dev/gradle-1.6
+export GRADLE_HOME=$HOME/dev/gradle-1.8
 
 alias grep='grep --color'
 export M2_HOME="/usr/share/maven/"
