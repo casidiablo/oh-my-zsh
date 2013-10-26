@@ -7,7 +7,7 @@ plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein
 
 source $ZSH/oh-my-zsh.sh
 
-export GRADLE_HOME=$HOME/dev/gradle-1.8
+export GRADLE_HOME=/usr/local/opt/gradle
 
 alias grep='grep --color'
 export M2_HOME="/usr/share/maven/"
@@ -23,7 +23,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ... add opt paths
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # ... add android paths
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$GRADLE_HOME/bin
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin
 # ... add heroku and rvm paths
 export PATH=$PATH:$HEROKU_BIN:$RVM_HOME
 
