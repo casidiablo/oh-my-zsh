@@ -3,7 +3,7 @@ ZSH_THEME="gentoo"
 
 CASE_SENSITIVE="true"
 
-plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein hg)
+plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein hg zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
