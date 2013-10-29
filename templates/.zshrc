@@ -10,8 +10,9 @@ source $ZSH/oh-my-zsh.sh
 export GRADLE_HOME=/usr/local/opt/gradle
 
 alias grep='grep --color'
-export M2_HOME="/usr/share/maven/"
+export M3_HOME="/usr/share/maven/"
 export ANDROID_HOME=$HOME/dev/android-sdk
+export ANDROID_TOOLS=$ANDROID_HOME/build-tools/18.1.1/
 export NDK=~/dev/android-ndk
 export NDK_BASE=$NDK
 export ANDROID_NDK_HOME=$NDK
@@ -23,7 +24,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ... add opt paths
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # ... add android paths
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$ANDROID_TOOLS
 # ... add heroku and rvm paths
 export PATH=$PATH:$HEROKU_BIN:$RVM_HOME
 
