@@ -22,7 +22,7 @@ export HEROKU_BIN=/usr/local/heroku/bin
 # ... add preceding paths to $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ... add opt paths
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin
 # ... add android paths
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$ANDROID_TOOLS
 # ... add heroku and rvm paths
