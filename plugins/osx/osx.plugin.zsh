@@ -172,7 +172,7 @@ function itunes() {
 			opt="set mute to false"
 			;;
 		next|previous)
-			opt="$opt track"
+qq			opt="$opt track"
 			;;
 		""|-h|--help)
 			echo "Usage: itunes <option>"
@@ -190,4 +190,3 @@ function itunes() {
 	esac
 	osascript -e "tell application \"iTunes\" to $opt"
 }
-
