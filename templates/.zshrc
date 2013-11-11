@@ -3,7 +3,7 @@ ZSH_THEME="gentoo"
 
 CASE_SENSITIVE="true"
 
-plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein hg zsh-syntax-highlighting brew)
+plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein hg zsh-syntax-highlighting brew history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,4 +38,7 @@ alias mtdply='mvn clean -DaltDeploymentRepository=telly-sonatype-nexus-snapshot:
 alias nano='emacsclient -t'
 alias caffeine='caffeinate -d &'
 alias decaff="ps -ef | grep caffeinate | grep -v grep | awk '{print $2}' | xargs kill -9"
-alias ccat="pygmentize -g"
+alias cat="pygmentize -g"
+
+# Enables git today alias
+git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
