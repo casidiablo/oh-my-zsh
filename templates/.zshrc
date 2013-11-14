@@ -34,7 +34,7 @@ alias mi='mvn source:jar install'
 alias mdci='mvn -DskipTests=true clean source:jar install'
 alias mc='mvn clean'
 alias mtdply='mvn clean -DaltDeploymentRepository=telly-sonatype-nexus-snapshot::default::https://oss.sonatype.org/content/repositories/snapshots/ deploy'
-alias nano='emacsclient -t'
+alias ec='emacsclient -t'
 alias caffeine='caffeinate -d &'
 alias decaff="ps -ef | grep caffeinate | grep -v grep | awk '{print $2}' | xargs kill -9"
 alias cat="pygmentize -g"
