@@ -43,3 +43,4 @@ alias cat="pygmentize -g"
 git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
 
 export MAVEN_OPTS="-javaagent:$HOME/.m2/maven-color-agent-0.3.jar"
+alias ec="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs"
