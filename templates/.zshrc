@@ -11,7 +11,7 @@ export GRADLE_HOME=/usr/local/opt/gradle
 alias grep='grep --color'
 export M3_HOME="/usr/share/maven/"
 export ANDROID_HOME=$HOME/dev/android-sdk
-export ANDROID_TOOLS=$ANDROID_HOME/build-tools/18.1.1/
+export ANDROID_TOOLS=$ANDROID_HOME/build-tools/18.1.1
 export NDK=~/dev/android-ndk
 export NDK_BASE=$NDK
 export ANDROID_NDK_HOME=$NDK
@@ -43,3 +43,4 @@ alias cat="pygmentize -g"
 git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
 
 export MAVEN_OPTS="-javaagent:$HOME/.m2/maven-color-agent-0.3.jar"
+alias ec="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs"
