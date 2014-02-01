@@ -45,3 +45,7 @@ git config --global alias.today "log --since=midnight --author='$(git config use
 export MAVEN_OPTS="-javaagent:$HOME/.m2/maven-color-agent-0.3.jar"
 alias ec="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs"
 alias ttt="tmux -S /tmp/shared attach -r"
+alias gcod="git checkout develop"
+alias gmod="git merge origin/develop"
+alias gcomd="gcod && gmod"
+alias gpob="gp origin `git rev-parse --abbrev-ref HEAD`"
