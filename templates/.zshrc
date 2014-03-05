@@ -49,3 +49,5 @@ alias gcod="git checkout develop"
 alias gmod="git merge origin/develop"
 alias gcomd="gcod && gmod"
 alias gpob="gp origin --set-upstream `git rev-parse --abbrev-ref HEAD`"
+
+export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
