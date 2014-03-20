@@ -52,3 +52,4 @@ alias gpob="gp origin --set-upstream `git rev-parse --abbrev-ref HEAD`"
 
 export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
 export DOCKER_HOST=tcp://127.0.0.1:4243
+alias gw="./gradlew"
