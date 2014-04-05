@@ -42,14 +42,15 @@ alias cat="pygmentize -g"
 # Enables git today alias
 git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
 
-export MAVEN_OPTS="-javaagent:$HOME/.m2/maven-color-agent-0.3.jar"
 alias ec="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs"
 alias ttt="tmux -S /tmp/shared attach -r"
 alias gcod="git checkout develop"
 alias gmod="git merge origin/develop"
 alias gcomd="gcod && gmod"
-alias gpob="gp origin --set-upstream `git rev-parse --abbrev-ref HEAD`"
 
 export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
 export DOCKER_HOST=tcp://127.0.0.1:4243
 alias gw="./gradlew"
+alias hb="hub browse"
+alias hpr="hub pull-request"
+fortune | cowsay
