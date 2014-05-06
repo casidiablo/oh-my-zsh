@@ -6,8 +6,6 @@ plugins=(git macports git-extras jira mvn heroku sublime mercurial node npm lein
 
 source $ZSH/oh-my-zsh.sh
 
-export GRADLE_HOME=~/dev/gradle-1.9
-
 alias grep='grep --color'
 export M3_HOME="/usr/share/maven/"
 export ANDROID_HOME=$HOME/dev/android-sdk
@@ -21,7 +19,7 @@ export HEROKU_BIN=/usr/local/heroku/bin
 # ... add preceding paths to $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ... add opt paths
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$GRADLE_HOME/bin
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin
 # ... add android paths
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$NDK:~/bin:$ANDROID_TOOLS
 # ... add heroku and rvm paths
@@ -42,14 +40,17 @@ alias cat="pygmentize -g"
 # Enables git today alias
 git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
 
-export MAVEN_OPTS="-javaagent:$HOME/.m2/maven-color-agent-0.3.jar"
 alias ec="/usr/local/Cellar/emacs/24.3/Emacs.app/Contents/MacOS/Emacs"
 alias ttt="tmux -S /tmp/shared attach -r"
 alias gcod="git checkout develop"
 alias gmod="git merge origin/develop"
 alias gcomd="gcod && gmod"
-alias gpob="gp origin --set-upstream `git rev-parse --abbrev-ref HEAD`"
 
 export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+export JAVA_HOME=$(/usr/libexec/java_home -d64 -v '1.7*')
 export DOCKER_HOST=tcp://127.0.0.1:4243
 alias gw="./gradlew"
+alias hb="hub browse"
+alias hpr="hub pull-request -b develop"
+fortune | cowsay
+alias clone="git clone"
