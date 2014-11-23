@@ -7,7 +7,7 @@ clock_array=(🕐  🕜  🕑  🕝  🕒  🕞  🕓  🕟  🕔  🕠  🕕  �
 function check_email {
 	count=`/bin/cat ~/.newemail`
 	if [ "$count" -gt 0 ]; then
-		echo "📨 "
+		echo "📨  "
 	else
 		check_hour
 	fi
@@ -33,12 +33,17 @@ function check_hour {
 	fi
 
 	clock_index=`echo "(($hour * 2) + $clock_array_shift) % 24" | bc`
+
+	if [ "$clock_index" -eq 0 -a "$hour" -eq 12 ]; then
+		clock_index=24
+	fi
+
 	clock=${clock_array[$clock_index]}
 
-	echo "$clock "
+	#echo "$clock "
 }
 
-PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})$(check_email) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
+PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})$(check_email)%{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=") "
