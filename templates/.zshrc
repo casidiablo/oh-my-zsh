@@ -8,8 +8,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias grep='grep --color'
 export M3_HOME="/usr/share/maven/"
-export ANDROID_HOME=$HOME/dev/android-sdk
-export ANDROID_TOOLS=$ANDROID_HOME/build-tools/18.1.1
+#export ANDROID_HOME=$HOME/dev/android-sdk
+#export ANDROID_TOOLS=$ANDROID_HOME/build-tools/18.1.1
 export NDK=~/dev/android-ndk
 export NDK_BASE=$NDK
 export ANDROID_NDK_HOME=$NDK
@@ -35,7 +35,7 @@ alias mtdply='mvn clean -DaltDeploymentRepository=telly-sonatype-nexus-snapshot:
 alias ec='emacsclient -t'
 alias caffeine='caffeinate -d &'
 alias decaff="ps -ef | grep caffeinate | grep -v grep | awk '{print $2}' | xargs kill -9"
-alias cc="pygmentize -g"
+alias c="pygmentize -g"
 
 # Enables git today alias
 git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
@@ -47,12 +47,70 @@ alias gmod="git merge origin/develop"
 alias gcomd="gcod && gmod"
 
 export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-#export JAVA_HOME=$(/usr/libexec/java_home -d64 -v '1.7*')
+
+#os specific settings
+if [[ `uname` = "Linux" ]]; then
+    fortune | cowsay
+else
+    export JAVA_HOME=$(/usr/libexec/java_home -d64 -v '1.8')
+    files=(/usr/local/Cellar/cowsay/3.03/share/cows/*)
+    /bin/cat ~/.lasttweet | tweets-filter -trim-only | cowsay -f `echo ${files[$((RANDOM%${#files}))]}` | tweets-filter
+    source /usr/local/opt/autoenv/activate.sh
+    source ~/Dropbox/cred
+    if [ -e /Users/cristian/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/cristian/.nix-profile/etc/profile.d/nix.sh; fi
+fi
+
 export DOCKER_HOST=tcp://127.0.0.1:4243
+
 alias gw="./gradlew"
 alias hb="hub browse"
 alias hpr="hub pull-request -b develop"
-fortune | cowsay
 alias clone="git clone"
+alias tt="gw test"
+alias grup='git remote | parallel git fetch --append | lolcat'
 
-export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin:~/.nimble/bin:~/.babel/bin
+function gpcb() {
+  git push origin `git symbolic-ref -q --short HEAD`
+}
+
+function gpcb+() {
+  git push origin +`git symbolic-ref -q --short HEAD`
+}
+
+function m
+{
+  command mkdir /tmp/$1 && cd /tmp/$1
+}
+
+
+
+# trello
+alias f="grep Name | sed 's/.*Name: \(.*\) (*/\1/' | sed 's/( [a-z0-9]*)//g'"
+alias todo="trello card list -b 54107e6b2ae53cf63c6402ea -l 54107e6b2ae53cf63c6402eb"
+alias doing="trello card list -b 54107e6b2ae53cf63c6402ea -l 54107e6b2ae53cf63c6402ec"
+alias finished="trello card list -b 54107e6b2ae53cf63c6402ea -l 54107e6b2ae53cf63c6402ed"
+
+function create() {
+  name="$@"
+  trello card create -b 54107e6b2ae53cf63c6402ea -l 54107e6b2ae53cf63c6402eb -n $name
+}
+
+function start() {
+  trello card move -c $1 -l 54107e6b2ae53cf63c6402ec
+}
+
+function stop() {
+  trello card move -c $1 -l 54107e6b2ae53cf63c6402eb
+}
+
+function complete() {
+  trello card move -c $1 -l 54107e6b2ae53cf63c6402ed
+}
+
+function clg() {
+  find ~/.gradle/caches -name \*$1\* -exec rm -rfv {} \;
+}
+
+export PATH=$PATH:$HOME/.cabal/bin
+alias gcal='gcalcli calw --calendar cristian@scopely.com'
+alias gcal='gcalcli calw --calendar cristian@scopely.com'
