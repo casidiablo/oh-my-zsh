@@ -43,7 +43,11 @@ function check_hour {
 	#echo "$clock "
 }
 
-PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})$(check_email)%{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
+if [[ `uname` = "Linux" ]]; then
+    PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}) %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
+else
+    PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%})$(check_email)%{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=") "

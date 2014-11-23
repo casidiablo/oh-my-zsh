@@ -35,7 +35,7 @@ alias mtdply='mvn clean -DaltDeploymentRepository=telly-sonatype-nexus-snapshot:
 alias ec='emacsclient -t'
 alias caffeine='caffeinate -d &'
 alias decaff="ps -ef | grep caffeinate | grep -v grep | awk '{print $2}' | xargs kill -9"
-alias cat="pygmentize -g"
+alias cc="pygmentize -g"
 
 # Enables git today alias
 git config --global alias.today "log --since=midnight --author='$(git config user.name)' --oneline"
@@ -47,10 +47,12 @@ alias gmod="git merge origin/develop"
 alias gcomd="gcod && gmod"
 
 export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
-export JAVA_HOME=$(/usr/libexec/java_home -d64 -v '1.7*')
+#export JAVA_HOME=$(/usr/libexec/java_home -d64 -v '1.7*')
 export DOCKER_HOST=tcp://127.0.0.1:4243
 alias gw="./gradlew"
 alias hb="hub browse"
 alias hpr="hub pull-request -b develop"
 fortune | cowsay
 alias clone="git clone"
+
+export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin:~/.nimble/bin:~/.babel/bin
